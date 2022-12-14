@@ -3,3 +3,6 @@
 
 # PyCache
 __pycache__
+
+# Zone identifier files (whatever those are)
+*Zone.Identifier
