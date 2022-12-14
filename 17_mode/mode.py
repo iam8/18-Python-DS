@@ -13,4 +13,11 @@ def mode(nums):
         2
     """
 
-    
+    frequencies = {num : nums.count(num) for num in nums}
+    max_freq = max(frequencies.values())
+
+    for (num, freq) in frequencies.items():
+        if freq == max_freq:
+            return num
+
+    return None
