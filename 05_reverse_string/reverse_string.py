@@ -1,5 +1,6 @@
 def reverse_string(phrase):
-    """Reverse string,
+    """
+    Reverse string,
 
         >>> reverse_string('awesome')
         'emosewa'
@@ -7,3 +8,5 @@ def reverse_string(phrase):
         >>> reverse_string('sauce')
         'ecuas'
     """
+
+    return phrase[::-1]
