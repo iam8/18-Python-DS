@@ -27,38 +27,19 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
     """
 
-    final_res = None
+    operations_dict = {
+        "add" : a + b,
+        "subtract" : a - b,
+        "multiply" : a * b,
+        "divide" : a / b
+    }
 
-    if operation.lower() == "add":
-        result = a + b
+    math_result = operations_dict.get(operation.lower(), None)
 
-        if make_int:
-            result = int(result)
+    if not math_result:
+        return None
 
-        final_res = f"{message} {result}"
+    if make_int:
+        math_result = int(math_result)
 
-    if operation.lower() == "subtract":
-        result = a - b
-
-        if make_int:
-            result = int(result)
-
-        final_res = f"{message} {result}"
-
-    if operation.lower() == "multiply":
-        result = a * b
-
-        if make_int:
-            result = int(result)
-
-        final_res = f"{message} {result}"
-
-    if operation.lower() == "divide":
-        result = a / b
-
-        if make_int:
-            result = int(result)
-
-        final_res = f"{message} {result}"
-
-    return final_res
+    return f"{message} {math_result}"
