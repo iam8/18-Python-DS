@@ -1,5 +1,6 @@
 def multiply_even_numbers(nums):
-    """Multiply the even numbers.
+    """
+    Multiply the even numbers.
     
         >>> multiply_even_numbers([2, 3, 4, 5, 6])
         48
@@ -12,3 +13,10 @@ def multiply_even_numbers(nums):
         >>> multiply_even_numbers([1, 3, 5])
         1
     """
+
+    multiply_result = 1
+    for num in nums:
+        if num % 2 == 0:
+            multiply_result *= num
+
+    return multiply_result
