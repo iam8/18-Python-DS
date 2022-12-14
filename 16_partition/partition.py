@@ -1,5 +1,6 @@
 def partition(lst, fn):
-    """Partition lst by predicate.
+    """
+    Partition lst by predicate.
      
      - lst: list of items
      - fn: function that returns True or False
@@ -19,3 +20,13 @@ def partition(lst, fn):
         >>> partition(["hi", None, 6, "bye"], is_string)
         [['hi', 'bye'], [None, 6]]
     """
+
+    partitioned_list = [[], []]
+    for item in lst:
+        if fn(item):
+            partitioned_list[0].append(item)
+        
+        else:
+            partitioned_list[1].append(item)
+
+    return partitioned_list
