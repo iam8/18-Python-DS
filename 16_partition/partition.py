@@ -21,12 +21,4 @@ def partition(lst, fn):
         [['hi', 'bye'], [None, 6]]
     """
 
-    partitioned_list = [[], []]
-    for item in lst:
-        if fn(item):
-            partitioned_list[0].append(item)
-        
-        else:
-            partitioned_list[1].append(item)
-
-    return partitioned_list
+    return [[item for item in lst if fn(item)], [item for item in lst if not fn(item)]]
