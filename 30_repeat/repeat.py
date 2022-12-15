@@ -1,5 +1,6 @@
 def repeat(phrase, num):
-    """Return phrase, repeated num times.
+    """
+    Return phrase, repeated num times.
 
         >>> repeat('*', 3)
         '***'
@@ -18,3 +19,8 @@ def repeat(phrase, num):
         >>> repeat('abc', 'nope') is None
         True
     """
+
+    if not isinstance(num, int) or num < 0:
+        return None
+
+    return num * phrase
