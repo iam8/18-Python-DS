@@ -22,6 +22,8 @@ def sum_pairs(nums, goal):
         ()
     """
 
+    # Uglier and less optimal than solution but it works
+
     found_pairs = []
     for outer_idx in range(len(nums)):
         outer_num = nums[outer_idx]

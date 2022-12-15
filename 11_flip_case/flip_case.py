@@ -12,7 +12,8 @@ def flip_case(phrase, to_swap):
         'AaaaHHH'
     """
 
+    # Just practicing list comprehension
     new_case_chars = [char.swapcase() if char.lower() == to_swap.lower()
-                                      else char for char in list(phrase)]
+                                      else char for char in phrase]
 
     return "".join(new_case_chars)

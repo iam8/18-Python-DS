@@ -18,7 +18,7 @@ def three_odd_numbers(nums):
     if len(nums) < 3:
         return False
 
-    for start_idx in range(len(nums) - 3):
+    for start_idx in range(len(nums) - 2):
         if (nums[start_idx] + nums[start_idx + 1] + nums[start_idx + 2]) % 2 != 0:
             return True
 

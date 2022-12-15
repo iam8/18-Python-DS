@@ -9,6 +9,8 @@ def titleize(phrase):
         'Only Capitalize First'
     """
 
+    # Forgot about str.title() method
+
     words = phrase.split(" ")
     words_cap = [word.capitalize() for word in words]
 

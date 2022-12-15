@@ -21,5 +21,3 @@ def find_the_duplicate(nums):
             return num
         
         unique_nums.add(num)
-
-    return None

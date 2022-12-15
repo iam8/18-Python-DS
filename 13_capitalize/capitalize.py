@@ -9,6 +9,10 @@ def capitalize(phrase):
         'Only first word'
     """
 
+    # Note: I did it the way I did below because the str.capitalize() method will also lower-case
+    # any chars later in the string, messing up other capitalization; for example:
+    # "party in the USA".capitalize() returns "Party in the usa"
+
     if not phrase:
         return ""
 

@@ -23,16 +23,6 @@ def two_oldest_ages(ages):
     # can take *any* type of list-like-thing, and returns a new, sorted list
     # from it.
 
-    if not ages:
-        return ()
-
-    sorted_descending = sorted(ages, reverse=True)
-    max_age = sorted_descending[0]
-    next_age = None
-
-    for age in sorted_descending:
-        if age != max_age:
-            next_age = age
-            break
-
-    return (next_age, max_age)
+    unique_ages = set(ages)
+    two_oldest = sorted(unique_ages)[-2:]
+    return tuple(two_oldest)

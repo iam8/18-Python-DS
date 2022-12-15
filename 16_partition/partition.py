@@ -21,4 +21,5 @@ def partition(lst, fn):
         [['hi', 'bye'], [None, 6]]
     """
 
+    # I like to be clever
     return [[item for item in lst if fn(item)], [item for item in lst if not fn(item)]]

@@ -32,14 +32,10 @@ def includes(collection, sought, start=None):
         True
     """
 
-    start_idx = 0
-    if start:
-        start_idx = start
-
-    if isinstance(collection, set):
-        return sought in collection
-
     if isinstance(collection, dict):
         return sought in collection.values()
 
-    return sought in collection[start_idx:]
+    if start is None or isinstance(collection, set):
+        return sought in collection
+
+    return sought in collection[start:]

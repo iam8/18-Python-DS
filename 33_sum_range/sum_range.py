@@ -25,8 +25,8 @@ def sum_range(nums, start=0, end=None):
         9
     """
 
-    if not end or end > len(nums):
-        end = len(nums) - 1
+    if end is None or end > len(nums):
+        end = len(nums)
 
     total = 0
     for num in nums[start:end + 1]:
