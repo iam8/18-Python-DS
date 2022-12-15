@@ -22,13 +22,15 @@ def sum_pairs(nums, goal):
         ()
     """
 
-    # found_pairs = []
-    # for i in nums:
-    #     for j in nums:
-    #         if i + j == goal:
-    #             found_pairs.append((i, j))
+    found_pairs = []
+    for outer_idx in range(len(nums)):
+        outer_num = nums[outer_idx]
 
-    # if not found_pairs:
-    #     return ()
+        for inner_num in nums[outer_idx + 1:]:
+            if outer_num + inner_num == goal:
+                found_pairs.append((outer_num, inner_num))
 
-    # return min(found_pairs)
+    if not found_pairs:
+        return ()
+
+    return min(found_pairs)
