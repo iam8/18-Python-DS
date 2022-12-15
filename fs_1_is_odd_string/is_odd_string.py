@@ -1,9 +1,10 @@
 def is_odd_string(word):
-    """Is the sum of the character-positions odd?
+    """
+    Is the sum of the character-positions odd?
 
     Word is a simple word of uppercase/lowercase letters without punctuation.
 
-    For each character, find it's "character position" ("a"=1, "b"=2, etc).
+    For each character, find its "character position" ("a"=1, "b"=2, etc).
     Return True/False, depending on whether sum of those numbers is odd.
 
     For example, these sum to 1, which is odd:
@@ -29,3 +30,10 @@ def is_odd_string(word):
     """
 
     # Hint: you may find the ord() function useful here
+    pos_offset = ord("a") - 1
+
+    pos_total = 0
+    for char in word.lower():
+        pos_total += ord(char) - pos_offset
+
+    return pos_total % 2 != 0
