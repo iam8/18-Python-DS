@@ -1,5 +1,6 @@
 def find_greater_numbers(nums):
-    """Return # of times a number is followed by a greater number.
+    """
+    Return # of times a number is followed by a greater number.
 
     For example, for [1, 2, 3], the answer is 3:
     - the 1 is followed by the 2 *and* the 3
@@ -19,3 +20,12 @@ def find_greater_numbers(nums):
         >>> find_greater_numbers([])
         0
     """
+
+    total = 0
+
+    for idx in range(len(nums)):
+        for following_num in nums[idx + 1:]:
+            if following_num > nums[idx]:
+                total += 1
+
+    return total

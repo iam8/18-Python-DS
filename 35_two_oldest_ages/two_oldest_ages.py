@@ -1,5 +1,6 @@
 def two_oldest_ages(ages):
-    """Return two distinct oldest ages as tuple (second-oldest, oldest)..
+    """
+    Return two distinct oldest ages as tuple (second-oldest, oldest)..
 
         >>> two_oldest_ages([1, 2, 10, 8])
         (8, 10)
@@ -21,3 +22,17 @@ def two_oldest_ages(ages):
     # you may find it helpful to research the `sorted(iter)` function, which
     # can take *any* type of list-like-thing, and returns a new, sorted list
     # from it.
+
+    if not ages:
+        return ()
+
+    sorted_descending = sorted(ages, reverse=True)
+    max_age = sorted_descending[0]
+    next_age = None
+
+    for age in sorted_descending:
+        if age != max_age:
+            next_age = age
+            break
+
+    return (next_age, max_age)
